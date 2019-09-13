@@ -96,7 +96,11 @@ Pure.AssociateMetadataWithType(
 The `type` argument describes the event, and has to be unique for each payload. Subsequent calls to `AssociateMetadataWithType` with the same `type` will **override** the previous payload. This method requires that tracking has been started and will return an error if tracking is not started. To override this behaviour, use the overloaded method and pass `true` to the `force` argument.
 
 ## Android Bindings
-Add the package `Pure.Android.Sdk`.
+1. Add the nuget package `Pure.Android.Sdk`.  
+2. Download the pure-core AAR from here: <https://dl.bintray.com/unacast/pure/com/unacast/pure/pure-core/1.2.28/pure-core-1.2.28.aar>.  
+3. Add the downloaded aar to your android project and set the build action to `AndroidAarLibrary`.  
+4. Add the nuget packages `Xamarin.GooglePlayServices.Ads.Identifier`, `Xamarin.GooglePlayServices.Base` and `Xamarin.GooglePlayServices.Location`. Minimum version for these packages must be `71`.  
+
 ### Permissions
 The following permissions are required to collect and report data, and will be automatically merged into your `AndroidManifest.xml`:
 
